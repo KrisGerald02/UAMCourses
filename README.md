@@ -2,6 +2,8 @@
 
 Bienvenido a **AppGestionUAM**, una aplicación iOS desarrollada en Swift con arquitectura **MVVM** para la gestión de cursos universitarios. 🚀
 
+**UAMCourses** es una aplicación para gestionar el catálogo de cursos de la Universidad Americana (UAM). Permite a los estudiantes y personal académico consultar, organizar y acceder a información actualizada sobre los cursos ofrecidos en la universidad. 
+
 ---
 
 ## 📌 Índice
