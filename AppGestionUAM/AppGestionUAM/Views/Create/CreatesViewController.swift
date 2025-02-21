@@ -213,6 +213,7 @@ class CreatesViewController: UIViewController {
         viewModel.createCourse()
         
         
+        
     }
     
     private func showAlertWithNavigation(message: String) {
@@ -284,4 +285,6 @@ extension CreatesViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true)
     }
+    
+    
 }
