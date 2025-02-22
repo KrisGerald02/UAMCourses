@@ -1,19 +1,20 @@
 //
-//  ProfileViewController.swift
+//  EditProfileViewController.swift
 //  AppGestionUAM
 //
-//  Created by Kristel Geraldine Villalta Porras on 11/1/25.
+//  Created by Kristel Geraldine Villalta Porras on 4/2/25.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         //Custom Button Back
         // Establecer el título en la barra de navegación
-        self.title = "Mi Perfil"
+        self.title = "Editar Mi Perfil"
         
         // Configurar la apariencia de la barra de navegación
         let appearance = UINavigationBarAppearance()
