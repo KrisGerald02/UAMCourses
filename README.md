@@ -172,10 +172,12 @@ UAMCourses/
 
 ## 📸 Recursos
 
-- 🔊 [`agua.mp3`](https://github.com/Djave17/Proyecto_Final_iOS/tree/main/AppGestionUAM/Resources) (Efecto de sonido)
-- 🎥 [`vd_Onb1.mov`](https://github.com/Djave17/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb1.mov)
-- 🎥 [`vd_Onb2.mov`](https://github.com/Djave17/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb2.mov))
-- 🎥 [`vd_Onb3.mov`](https://github.com/Djave17/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb3.mov)
+- 🔊 [`agua.mp3`](https://github.com/KrisGerald02/Proyecto_Final_iOS/tree/main/AppGestionUAM/Resources) (Efecto de sonido)
+- 🎥 [`vd_Onb1.mov`](https://github.com/KrisGerald02/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb1.mov)
+- 🎥 [`vd_Onb2.mov`](https://github.com/KrisGerald02/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb2.mov))
+- 🎥 [`vd_Onb3.mov`](https://github.com/KrisGerald02/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb3.mov)
+- 🎥 [`vd_Onb4.mov`](https://github.com/KrisGerald02/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb4.mov)
+
 
 ---
 
