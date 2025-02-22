@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         //Ocultar texto al inicio
         passwordTextField.isSecureTextEntry = true
         setupCheckbox()
-        setupPasswordTextField()
+        setupTextField()
         setAllElements()
         
         btnQuestions.layer.cornerRadius = 10
@@ -54,6 +54,25 @@ class LoginViewController: UIViewController {
         //Gesto para quitar keyborard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
+        
+        //Animation Email
+        // Configura el borde inicial del text field
+               emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.gray.withAlphaComponent(0.05).cgColor
+               emailTextField.layer.cornerRadius = 5
+        //Animacion Password
+        passwordTextField.layer.borderWidth = 1
+                passwordTextField.layer.borderColor = UIColor.gray.withAlphaComponent(0.05).cgColor
+                passwordTextField.layer.cornerRadius = 5
+
+               // Configura los eventos de inicio y fin de edición
+               emailTextField.addTarget(self, action: #selector(emailTextFieldEditingDidBegin(_:)), for: .editingDidBegin)
+               emailTextField.addTarget(self, action: #selector(emailTextFieldEditingDidEnd(_:)), for: .editingDidEnd)
+        
+        // Configura los eventos de inicio y fin de edición para passwordTextField
+              passwordTextField.addTarget(self, action: #selector(passwordTextFieldEditingDidBegin(_:)), for: .editingDidBegin)
+              passwordTextField.addTarget(self, action: #selector(passwordTextFieldEditingDidEnd(_:)), for: .editingDidEnd)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,6 +195,7 @@ class LoginViewController: UIViewController {
         let changePasswordViewControler = ChangePassViewController2()
         navigationController?.pushViewController(changePasswordViewControler, animated: true)
     }
+    
     @IBAction func queHacerTapped(_ sender: Any) {
         
         let viewQuestion = QuestionLogInViewController(nibName: String?("QuestionLogInViewController"), bundle: nil)
@@ -183,11 +203,11 @@ class LoginViewController: UIViewController {
         
     }
     
-    
-    func setupPasswordTextField() {
+    //MARK: - Configuracion de Text Field
+    func setupTextField() {
         
         let lockIcon = UIImageView(image: UIImage(systemName: "lock"))
-            lockIcon.tintColor = .systemTeal  // Color del icono
+            lockIcon.tintColor = .systemTeal
             lockIcon.contentMode = .scaleAspectFit
             
             let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: passwordTextField.frame.height))
@@ -199,7 +219,7 @@ class LoginViewController: UIViewController {
             passwordTextField.leftViewMode = .always
         
         let emailIcon = UIImageView(image: UIImage(systemName: "envelope"))
-        emailIcon.tintColor = .systemTeal  // Color del icono
+        emailIcon.tintColor = .systemTeal
         emailIcon.contentMode = .scaleAspectFit
         
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: emailTextField.frame.height))
@@ -209,37 +229,64 @@ class LoginViewController: UIViewController {
         emailTextField.leftView = leftPaddingView
         emailTextField.leftViewMode = .always
 
-        // 👁 Icono de ojo a la derecha
+        // ojo derecha
         let hidePasswordButton = UIButton(type: .system)
         hidePasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
         hidePasswordButton.tintColor = .systemTeal
         hidePasswordButton.frame = CGRect(x: -5, y: 0, width: 28, height: passwordTextField.frame.height)  // Aumentar un poco el ancho
 
-        // Añadir el botón del ojo al padding de la derecha
+        // ojo derecha
         let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: emailTextField.frame.height))
         rightPaddingView.addSubview(hidePasswordButton)
         
         passwordTextField.rightView = rightPaddingView
         passwordTextField.rightViewMode = .always
 
-        // Acción para alternar visibilidad
+        // hide/show tapped password
         hidePasswordButton.addAction(UIAction(handler: { [weak self] _ in
             self?.togglePasswordVisibility(for: self?.passwordTextField, button: hidePasswordButton)
         }), for: .touchUpInside)
     }
 
-
     func togglePasswordVisibility(for textField: UITextField?, button: UIButton) {
         guard let textField = textField else { return }
         
-        // Alternar la visibilidad del texto
+       //cambiar vis car
         textField.isSecureTextEntry.toggle()
         
-        // Cambiar el icono entre "eye" y "eye.fill"
+        // change tapped
         let eyeImage = UIImage(systemName: textField.isSecureTextEntry ? "eye" : "eye.fill")
         button.setImage(eyeImage, for: .normal)
     }
     
+    //MARK: - Configuracion Animaciones Text Field
+    @objc func emailTextFieldEditingDidBegin(_ sender: UITextField) {
+          // Cuando el campo es tocado, cambiamos el borde a teal con animación
+          UIView.animate(withDuration: 0.3) {
+              sender.layer.borderColor = UIColor.systemTeal.cgColor
+          }
+      }
+
+      @objc func emailTextFieldEditingDidEnd(_ sender: UITextField) {
+          // Cuando el campo deja de ser tocado, se restaura el borde a su color por defecto
+          UIView.animate(withDuration: 0.3) {
+              sender.layer.borderColor = UIColor.gray.withAlphaComponent(0.05).cgColor  // Borde gris por defecto
+          }
+      }
+    
+    // Animación para passwordTextField cuando se toca
+       @objc func passwordTextFieldEditingDidBegin(_ sender: UITextField) {
+           UIView.animate(withDuration: 0.3) {
+               sender.layer.borderColor = UIColor.systemTeal.cgColor
+           }
+       }
+
+       // Animación para passwordTextField cuando deja de ser tocado
+       @objc func passwordTextFieldEditingDidEnd(_ sender: UITextField) {
+           UIView.animate(withDuration: 0.3) {
+               sender.layer.borderColor = UIColor.gray.withAlphaComponent(0.05).cgColor  // Borde gris muy tenue
+           }
+       }
 
     private func setupCheckbox() {
         // Configurar la imagen del checkbox (desmarcado por defecto)
@@ -248,9 +295,6 @@ class LoginViewController: UIViewController {
 
         checkbox.tintColor = .systemTeal // Color teal para el icono
         checkbox.addTarget(self, action: #selector(toggleCheckbox), for: .touchUpInside)
-        
-       
-        
     }
 
     // Acción para alternar el checkbox
@@ -258,8 +302,3 @@ class LoginViewController: UIViewController {
         checkbox.isSelected.toggle()
     }
 }
-
-
-
-
-
