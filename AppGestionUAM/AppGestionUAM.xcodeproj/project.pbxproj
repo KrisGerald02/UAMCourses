@@ -73,7 +73,6 @@
 				Views/Launcher/LauncherViewController.xib,
 				"Views/Login /Login Controller /LoginController.swift",
 				"Views/Login /LoginViewController.swift",
-				"Views/Login /QuestionLogIn/QuestionLogInViewController.swift",
 				"Views/Onboarding/ONB1 /Onboarding1ViewController.swift",
 				"Views/Onboarding/ONB1 /Onboarding1ViewController.xib",
 				Views/Onboarding/ONB2/Onboarding2ViewController.swift,
@@ -82,7 +81,6 @@
 				Views/Register/RegisterViewController.swift,
 				Views/Settings/Contact/ContactViewController.swift,
 				Views/Settings/Privacy/PrivacyViewController.swift,
-				Views/Settings/Profile/ProfileViewController.swift,
 				Views/Settings/SettingsViewController.swift,
 			);
 			target = 51CD464C2CD3CAAB000D24BF /* AppGestionUAMTests */;
@@ -126,7 +124,6 @@
 				Views/Launcher/LauncherViewController.xib,
 				"Views/Login /Login Controller /LoginController.swift",
 				"Views/Login /LoginViewController.swift",
-				"Views/Login /QuestionLogIn/QuestionLogInViewController.swift",
 				"Views/Onboarding/ONB1 /Onboarding1ViewController.swift",
 				"Views/Onboarding/ONB1 /Onboarding1ViewController.xib",
 				Views/Onboarding/ONB2/Onboarding2ViewController.swift,
@@ -135,7 +132,6 @@
 				Views/Register/RegisterViewController.swift,
 				Views/Settings/Contact/ContactViewController.swift,
 				Views/Settings/Privacy/PrivacyViewController.swift,
-				Views/Settings/Profile/ProfileViewController.swift,
 				Views/Settings/SettingsViewController.swift,
 			);
 			target = 51CD46562CD3CAAB000D24BF /* AppGestionUAMUITests */;

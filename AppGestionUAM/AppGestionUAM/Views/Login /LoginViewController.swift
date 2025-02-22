@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var bodyView: UIView!
     
     //Botones
+    @IBOutlet weak var btnQuestions: UIButton!
     @IBOutlet weak var checkbox: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
@@ -44,11 +45,11 @@ class LoginViewController: UIViewController {
         
         //Ocultar texto al inicio
         passwordTextField.isSecureTextEntry = true
-        
         setupCheckbox()
-        toggleImageButton()
-        
+        setupPasswordTextField()
         setAllElements()
+        
+        btnQuestions.layer.cornerRadius = 10
         
         //Gesto para quitar keyborard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -183,25 +184,63 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func hideEmail(_ sender: Any) {
-        emailTextField.isSecureTextEntry.toggle()
+    func setupPasswordTextField() {
+        
+        let lockIcon = UIImageView(image: UIImage(systemName: "lock"))
+            lockIcon.tintColor = .systemTeal  // Color del icono
+            lockIcon.contentMode = .scaleAspectFit
+            
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: passwordTextField.frame.height))
+            lockIcon.frame = CGRect(x: 10, y: (paddingView.frame.height - 20) / 2, width: 20, height: 20)
+            
+            paddingView.addSubview(lockIcon)
+            
+            passwordTextField.leftView = paddingView
+            passwordTextField.leftViewMode = .always
+        
+        let emailIcon = UIImageView(image: UIImage(systemName: "envelope"))
+        emailIcon.tintColor = .systemTeal  // Color del icono
+        emailIcon.contentMode = .scaleAspectFit
+        
+        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: emailTextField.frame.height))
+        emailIcon.frame = CGRect(x: 10, y: (leftPaddingView.frame.height - 20) / 2, width: 20, height: 20)
+        leftPaddingView.addSubview(emailIcon)
+        
+        emailTextField.leftView = leftPaddingView
+        emailTextField.leftViewMode = .always
+
+        // 👁 Icono de ojo a la derecha
+        let hidePasswordButton = UIButton(type: .system)
+        hidePasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        hidePasswordButton.tintColor = .systemTeal
+        hidePasswordButton.frame = CGRect(x: -5, y: 0, width: 28, height: passwordTextField.frame.height)  // Aumentar un poco el ancho
+
+        // Añadir el botón del ojo al padding de la derecha
+        let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: emailTextField.frame.height))
+        rightPaddingView.addSubview(hidePasswordButton)
+        
+        passwordTextField.rightView = rightPaddingView
+        passwordTextField.rightViewMode = .always
+
+        // Acción para alternar visibilidad
+        hidePasswordButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.togglePasswordVisibility(for: self?.passwordTextField, button: hidePasswordButton)
+        }), for: .touchUpInside)
     }
-    @IBAction func hidePassword(_ sender: Any) {
-        // Cambiar el estado de isSecureTextEntry
-        passwordTextField.isSecureTextEntry.toggle()
-        hidePasswordButton.isSelected = true
+
+
+    func togglePasswordVisibility(for textField: UITextField?, button: UIButton) {
+        guard let textField = textField else { return }
         
+        // Alternar la visibilidad del texto
+        textField.isSecureTextEntry.toggle()
         
+        // Cambiar el icono entre "eye" y "eye.fill"
+        let eyeImage = UIImage(systemName: textField.isSecureTextEntry ? "eye" : "eye.fill")
+        button.setImage(eyeImage, for: .normal)
     }
     
-    func toggleImageButton(){
-        
-        hidePasswordButton.setImage(UIImage(named: "eye"), for: .normal)
-        
-        hidePasswordButton.setImage(UIImage(named: "eye.slash.fill"), for: .selected)
-        
-        
-    }
+
     private func setupCheckbox() {
         // Configurar la imagen del checkbox (desmarcado por defecto)
         checkbox.setImage(UIImage(systemName: "square"), for: .normal)
