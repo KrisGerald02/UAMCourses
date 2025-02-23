@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Verificar si hay una sesión activa en UserDefaults
         if let token = UserDefaults.standard.string(forKey: "token"), !token.isEmpty {
             // Usuario autenticado -> Ir directamente a CourseListViewController
-            let courseListVC = UINavigationController(rootViewController: LoginViewController())
+            let courseListVC = UINavigationController(rootViewController: SettingsViewController())
             window.rootViewController = courseListVC
         } else {
             // Usuario no autenticado -> Mostrar LoginViewController

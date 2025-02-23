@@ -25,10 +25,6 @@ class SettingsViewController: UIViewController {
 
     //MARK: - Navegation
     
-    @IBAction func btnProfile(_ sender: Any) {
-        let navProfile = ProfileViewController()
-        navigationController?.pushViewController(navProfile, animated: true)
-    }
     
     @IBAction func btnLanguage(_ sender: Any) {
         let navLanguage = LanguagesViewController()
