@@ -2,6 +2,8 @@
 
 Bienvenido a **AppGestionUAM**, una aplicación iOS desarrollada en Swift con arquitectura **MVVM** para la gestión de cursos universitarios. 🚀
 
+**UAMCourses** es una aplicación para gestionar el catálogo de cursos de la Universidad Americana (UAM). Permite a los estudiantes y personal académico consultar, organizar y acceder a información actualizada sobre los cursos ofrecidos en la universidad. 
+
 ---
 
 ## 📌 Índice
@@ -170,10 +172,12 @@ UAMCourses/
 
 ## 📸 Recursos
 
-- 🔊 [`agua.mp3`](https://github.com/Djave17/Proyecto_Final_iOS/tree/main/AppGestionUAM/Resources) (Efecto de sonido)
-- 🎥 [`vd_Onb1.mov`](https://github.com/Djave17/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb1.mov)
-- 🎥 [`vd_Onb2.mov`](https://github.com/Djave17/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb2.mov))
-- 🎥 [`vd_Onb3.mov`](https://github.com/Djave17/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb3.mov)
+- 🔊 [`agua.mp3`](https://github.com/KrisGerald02/Proyecto_Final_iOS/tree/main/AppGestionUAM/Resources) (Efecto de sonido)
+- 🎥 [`vd_Onb1.mov`](https://github.com/KrisGerald02/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb1.mov)
+- 🎥 [`vd_Onb2.mov`](https://github.com/KrisGerald02/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb2.mov))
+- 🎥 [`vd_Onb3.mov`](https://github.com/KrisGerald02/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb3.mov)
+- 🎥 [`vd_Onb4.mov`](https://github.com/KrisGerald02/Proyecto_Final_iOS/blob/main/AppGestionUAM/AppGestionUAM/vd_Onb4.mov)
+
 
 ---
 
