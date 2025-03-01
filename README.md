@@ -166,7 +166,7 @@ UAMCourses/
 
 - **David Sanchez** - Desarrollador, Líder del Proyecto 🚀
 - **Kristel Villalta** - Desarrolladora FrontEnd / Diseñadora UI/UX 😊
-- **Carlos** - Desarrollador
+- **Carlos Abea** - Documentador Técnico
 
 ---
 
